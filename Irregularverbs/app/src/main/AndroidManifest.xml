@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/british_flag"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/british_flag"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.IrregularVerbs">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".BeforeTestActivity"
+            android:label="Choose">
+        </activity>
+        <activity
+            android:name=".Test"
+            android:label="Good luck!"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".DictionaryActivity"
+            android:label="Dictionary"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".AnotherTest"
+            android:label="Good luck!"
+            android:configChanges="orientation|keyboardHidden|screenSize">
+        </activity>
+        <activity
+            android:name=".Mistakes"
+            android:label="Remember">
+        </activity>
+    </application>
+
+</manifest>

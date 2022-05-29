@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Irregular verbs</string>
+    <string name="btn1">Test</string>
+    <string name="btn2">Dictionary</string>
+    <string name="question">How many verbs are you going to check?</string>
+    <string name="ok">OK</string>
+    <string name="infinitive"> INFINITIVE </string>
+    <string name="patsimple"> PAST SIMPLE </string>
+    <string name="pastparticiple"> PAST PARTICIPLE </string>
+    <string name="translation"> TRANSLATION </string>
+    <string name="complete"> COMPLETE </string>
+    <string name="of"> OF </string>
+    <string name="search">SEARCH</string>
+    <string name="notfound">NOT FOUND</string>
+    <string name="label_for_result">Your result: {0} of {1}</string>
+    <string name="incorrect_input">INCORRECT INPUT</string>
+    <string name="incorrect_number">Are you sure?</string>
+    <string name="nothing_chosen">Choose anything, please</string>
+    <string name="not_number">Input a natural number, please</string>
+    <string name="of_format">%d OF %d</string>
+</resources>
