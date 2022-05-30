@@ -55,16 +55,16 @@ public class BeforeTestActivity extends AppCompatActivity {
                    String pre_n = enter.getText().toString();
                    Scanner in = new Scanner(pre_n);
                    n[0] = in.nextInt();
-                   if(n[0] <= 0 || n[0] > 121){
+                   if(n[0] <= 0 || n[0] > 294){
                        enter.setText("");
-                       disclaimer.setText(R.string.incorrect_number);
+                       disclaimer.setText("Are you sure?");
                    }else{
                        if(user_choice == 0){
                            test[0] = AnotherTest.class;
                        }else if(user_choice == 1){
                            test[0] = Test.class;
                        }else{
-                           disclaimer_2.setText(R.string.nothing_chosen);
+                           disclaimer_2.setText("Choose anything, please");
                            chosen[0] = false;
                        }
                        if(chosen[0]){
@@ -72,15 +72,15 @@ public class BeforeTestActivity extends AppCompatActivity {
                            i.putExtra("n", n[0]);
                            choice.setChecked(false);
                            writing.setChecked(false);
-                           disclaimer.setText(R.string.question);
+                           disclaimer.setText("How many verbs are you going to check?");
                            enter.setText("");
                            startActivity(i);
-
+                           finish();
                        }
                    }
                 }catch(Exception e){
                     enter.setText("");
-                    disclaimer.setText(R.string.not_number);
+                    disclaimer.setText("Input a natural number, please");
                 }
             }
         });

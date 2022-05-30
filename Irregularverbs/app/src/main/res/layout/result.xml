@@ -29,6 +29,12 @@
             android:layout_height="wrap_content"
             android:text="See mistakes "
             android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Back" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

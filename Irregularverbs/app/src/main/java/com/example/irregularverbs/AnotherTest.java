@@ -85,6 +85,13 @@ public class AnotherTest extends AppCompatActivity{
                         TextView answer = findViewById(R.id.res);
                         mark-=k;
                         answer.setText(MessageFormat.format("Yor result: {0} OF {1}", mark, n));
+                        Button back = (Button) findViewById(R.id.button2);
+                        back.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                finish();
+                            }
+                        });
                     }
                 } else {
                     k += 0.33;

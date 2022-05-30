@@ -119,6 +119,13 @@ public class Test extends FragmentActivity {
                             TextView result = (TextView) findViewById(R.id.res);
                             result.setText("YOR RESULT:" + mark + " OF " + (number-1) * 5);
                             Button see_mistakes = (Button) findViewById(R.id.button3);
+                            Button back = (Button) findViewById(R.id.button2);
+                            back.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    finish();
+                                }
+                            });
                             if(mark < (number-1) * 5) {
                                 see_mistakes.setVisibility(View.VISIBLE);
                             }
@@ -127,6 +134,8 @@ public class Test extends FragmentActivity {
                                 public void onClick(View view) {
                                     Intent i = new Intent(Test.this, Mistakes.class);
                                     startActivity(i);
+                                    number = 1;
+                                    current_question = 0;
                                     mark = 0;
                                 }
                             });
@@ -139,5 +148,9 @@ public class Test extends FragmentActivity {
                 }
             }
         });
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }
