@@ -15,7 +15,7 @@ public class Mistakes extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        drawActivity(getResources().getConfiguration().screenWidthDp/32.5f, Test.mistakes);
+        drawActivity(getResources().getConfiguration().screenWidthDp/31f, Test.mistakes);
     }
 
     @Override
@@ -125,5 +125,10 @@ public class Mistakes extends AppCompatActivity {
             main.addView(wrong);
         }
         setContentView(scrollView);
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Test.mistakes = new ArrayList<>();
     }
 }

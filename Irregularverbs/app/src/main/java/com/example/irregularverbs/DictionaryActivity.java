@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +17,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.irregularverbs.data.DBHelper;
-
 public class DictionaryActivity extends AppCompatActivity {
     public float text_size;
     public int primary_color;
@@ -27,7 +24,7 @@ public class DictionaryActivity extends AppCompatActivity {
     @SuppressLint("ResourceType")
     @Override
     public void onCreate(Bundle savedInstanceState){
-        text_size = getResources().getConfiguration().screenWidthDp/32.5f;
+        text_size = getResources().getConfiguration().screenWidthDp/31f;
         super.onCreate(savedInstanceState);
         draw();
     }
@@ -56,7 +53,6 @@ public class DictionaryActivity extends AppCompatActivity {
         //Ввод запроса
         EditText search_input = new EditText(this);
         search_input.setHint("A verb in English or in Russian");
-        search_input.setMinimumWidth(search.getMinimumWidth()*4/5);
         search_input.setTextSize(text_size);
         search.addView(search_input);
 
@@ -90,8 +86,7 @@ public class DictionaryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    String[] answer = LoadVerbs.find_the_word(search_input.getText().toString(),
-                            new DBHelper(DictionaryActivity.this));
+                    String[] answer = LoadVerbs.find_the_word(search_input.getText().toString());
                     if(answer[0].equals("")){
                         not_found.setText("NOT FOUND");
                     }else{
@@ -204,8 +199,8 @@ public class DictionaryActivity extends AppCompatActivity {
         vertical_scroll.addView(dictionary);
 
         //Добавление глаголов
-        String[][] all_the_verbs = LoadVerbs.get_all_the_verbs(new DBHelper(this));
-        for(int i = 0;i < 294; i++){
+        String[][] all_the_verbs = LoadVerbs.get_all_the_verbs();
+        for(int i = 0;i < 293; i++){
             TableRow verb = new TableRow(this);
             dictionary.addView(verb);
 

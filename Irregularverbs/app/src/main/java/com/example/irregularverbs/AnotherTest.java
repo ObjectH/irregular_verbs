@@ -11,15 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.irregularverbs.data.DBHelper;
-
 import java.text.MessageFormat;
 
 public class AnotherTest extends AppCompatActivity{
     double k = 0.0;
     int mainColor;
     int n;
-    int[] indexes;
+    Integer[] indexes;
     int current_question = 0;
     String[] answers;
     String[] task;
@@ -38,9 +36,9 @@ public class AnotherTest extends AppCompatActivity{
         Intent i = getIntent();
         n = i.getIntExtra("n",5);
         indexes = LoadVerbs.generate_random_numbers(n);
-        answers = LoadVerbs.choose_right_translations(indexes, new DBHelper(this));
-        task = LoadVerbs.choose_task_choice_questions(indexes, new DBHelper(this));
-        variants = LoadVerbs.choose_task_choice_variants(indexes, new DBHelper(this));
+        answers = LoadVerbs.choose_right_translations(indexes);
+        task = LoadVerbs.choose_task_choice_questions(indexes);
+        variants = LoadVerbs.choose_task_choice_variants(indexes);
         question = findViewById(R.id.textView);
         v1 = findViewById(R.id.v1);
         v2 = findViewById(R.id.v2);
@@ -95,6 +93,9 @@ public class AnotherTest extends AppCompatActivity{
                     }
                 } else {
                     k += 0.33;
+                    if(k == 0.99){
+                        k = 1;
+                    }
                     button.setBackgroundColor(getResources().getColor(R.color.wrong_answer));
                 }
             }
