@@ -34,6 +34,7 @@ public class Test extends FragmentActivity {
                     mark++;
                 }else{
                     correct = false;
+
                 }if(pp.getText().toString().equals(task.get(current_question)[2])){
                     mark++;
                 }else{
@@ -42,9 +43,11 @@ public class Test extends FragmentActivity {
                     mark++;
                 }else {
                     for(int i = 0; i < 292; i++){
-                        if(Arrays.binarySearch(MainActivity.verbs[i].translations, tr.getText().toString()) >= 0){
-                            mark++;
-                            break;
+                        if(MainActivity.verbs[i].f1.equals(task.get(current_question)[0]){
+                            if(Arrays.binarySearch(MainActivity.verbs[i].translations, tr.getText().toString()) >= 0){
+                                mark++;
+                                break;
+                            }
                         }
                     }
                 }
@@ -55,6 +58,7 @@ public class Test extends FragmentActivity {
                         mistakes.add(new String[]{question.getText().toString(), ps.getText().toString(),
                                 pp.getText().toString(), tr.getText().toString(), task.get(current_question)[1],
                                 task.get(current_question)[2], task.get(current_question)[3]});
+
                     }
                     question.setText(task.get(current_question)[0]);
                     ps.setText("");
